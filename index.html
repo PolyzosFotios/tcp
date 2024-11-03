@@ -12,13 +12,14 @@
             const cost = document.getElementById("cost").value;
             const price = document.getElementById("price").value;
             
+            let vatOfB = cost - (cost / 1.13);
+
             document.getElementById("output").innerHTML = "";
 
             for (let i = 0; i<= 50;i+=4){
                 let income = i * price;
                 let incomeClear = i * (price / 1.24);
                 let vat = income - incomeClear;
-                let vatOfB = cost - (cost / 1.13);
                 let total = Math.floor(incomeClear - cost  + vatOfB);
 
                 const displayMessage = i +".  💰 " + income + " #  🤑 " + total;
@@ -27,6 +28,11 @@
                 li.textContent = displayMessage;
                 document.getElementById("output").appendChild(li);
             }
+
+            //theloyme to total = 0
+            minSpots = ((cost - vatOfB) * 1.24)/price;
+            document.getElementById("minSpots").innerHTML = "Min Απαιτούμενες (0 κέρδος): " + minSpots.toFixed(1);
+
         }
 
     </script>
@@ -48,6 +54,9 @@
     <h3>Αποτελέσματα:</h3>
     <div id="output-container">
         <ul id="output"></ul>
+    </div>
+    <div>
+        <p id="minSpots">Min Απαιτούμενες (0 κέρδος): </p>
     </div>
 
 </body>
