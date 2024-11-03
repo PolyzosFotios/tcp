@@ -6,7 +6,7 @@
     <title>Simple Form</title>
     <script>
         function displayInfo(event) {
-            event.preventDefault(); // Αποτρέπει την αυτόματη ανανέωση της σελίδας
+            event.preventDefault();
 
             // Λήψη των τιμών των input
             const cost = document.getElementById("cost").value;
@@ -21,10 +21,8 @@
                 let vatOfB = cost - (cost / 1.13);
                 let total = Math.floor(incomeClear - cost  + vatOfB);
 
-                // Δημιουργία μηνύματος εμφάνισης
                 const displayMessage = i +".  💰 " + income + " #  🤑 " + total;
 
-                // Δημιουργία στοιχείου <li> και προσθήκη του στη λίστα
                 const li = document.createElement("li");
                 li.textContent = displayMessage;
                 document.getElementById("output").appendChild(li);
