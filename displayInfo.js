@@ -15,7 +15,7 @@ function displayInfo(event) {
         let vat = income - incomeClear;
         let total = Math.floor(incomeClear - cost  + vatOfB);
 
-        const displayMessage = i +".  💰 " + income + " #  🤑 " + total;
+        const displayMessage = i +".  💰 " + income + "  #  🤑 " + total;
 
         const li = document.createElement("li");
         li.textContent = displayMessage;
